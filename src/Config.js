@@ -1,6 +1,5 @@
 ﻿const Config = {
-    APIEndpoint: "https://teams-map-maker-api.azurewebsites.net/api/"
-    //APIEndpoint: "http://localhost:7071/api/"
+    APIEndpoint: process.env.REACT_APP_API_ENDPOINT
 }
 
 export default Config;

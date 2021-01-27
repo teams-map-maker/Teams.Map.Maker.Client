@@ -285,6 +285,9 @@ export class ImageMapper extends Component {
             }))
 
 
+            console.log(Config.APIEndpoint);
+
+
         toDataURL(this.state.imageData)
             .then(dataUrl => {
                 imageData = dataUrl
@@ -297,7 +300,7 @@ export class ImageMapper extends Component {
                 }
 
                 var data = JSON.stringify(content);
-                fetch(`${Config.APIEndpoint}PostTeamsMapData`, {
+                fetch(`${Config.APIEndpoint}/PostTeamsMapData`, {
                     method: 'POST',
                     body: data
                 }).then(response => response.blob())
@@ -336,7 +339,6 @@ export class ImageMapper extends Component {
                                 <div className={this.state.displayImage ? 'hidden' : 'main-title text-center'}>
                                     <h1 className={this.state.displayImage ? 'hidden' : 'display-4 text-center'}>Teams map maker</h1>
                                     <h2 className={this.state.displayImage ? 'hidden' : 'text-center'}>Start by uploading an image of your office map.</h2>
-                                    <p className={this.state.displayTitle ? 'beta-text h6' : 'hidden'}>(beta)</p>
                                 </div>
 
                                 <div className='container col-md-8'>
@@ -395,7 +397,6 @@ export class ImageMapper extends Component {
                                         <span className='btn btn-primary btn-file col-md-12 text-center'>
                                             Select image<input type='file' onChange={this.handleImageUpdate.bind(this)} />
                                         </span>
-                                        <p className='text-center lead'>Data should not be of confidential nature as the map is remotely hosted.</p>
                                         <p className='text-center'>The image will keep it's original size. Recommended size is approx. 1200 width but depends on general screen resolution.</p>
                                     </div>
                                 </div>
