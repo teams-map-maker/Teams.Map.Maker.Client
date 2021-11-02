@@ -1,5 +1,19 @@
-﻿body{
-    background-color: white;
+﻿@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #3B3A39;
+        color: white !important;
+    }
+
+    table, th, tr{
+        color: white !important;
+    }
 }
 
 .viewMap{
@@ -25,9 +39,17 @@
     cursor: pointer;
 }
 
-.map-div {
-    background-color: white;
+@media (prefers-color-scheme: dark) {
+    .map-div {
+        background-color: #3B3A39;
+    }
 }
+@media (prefers-color-scheme: light) {
+    .map-div {
+        background-color: white;
+    }
+}
+
 
 #mainImage {
     cursor: crosshair;
